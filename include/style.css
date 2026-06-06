@@ -1,0 +1,343 @@
+/* ============================================================
+   VitAll — main stylesheet
+   Fonts: Didact Gothic (headings), Open Sans (body)
+   Primary colour: petrol #2b8f99
+   ============================================================ */
+
+/* === Reset & base === */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: #333;
+  background: #fff;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Didact Gothic', 'Open Sans', sans-serif;
+  line-height: 1.25;
+}
+
+h1 { font-size: 1.85em; color: #2b8f99; margin-bottom: 0.65em; }
+h2 { font-size: 1.25em; margin: 1.2em 0 0.5em; color: #333; }
+h2.petrol { color: #2b8f99; }
+h3 { font-size: 1em; color: #333; }
+
+p  { margin-bottom: 1em; }
+a  { color: #2b8f99; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+img { max-width: 100%; height: auto; border: 0; }
+strong { font-weight: 700; }
+
+/* === Layout container === */
+.main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.clear { clear: both; }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.headermain {
+  position: relative;
+  background: #fff;
+}
+
+/* Hero image banner */
+.hero {
+  width: 100%;
+  height: 260px;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+/* Petrol accent stripe */
+.line {
+  height: 6px;
+  background: #2b8f99;
+}
+
+/* Logo + nav row */
+.headermain .main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.header { flex-shrink: 0; }
+img.logo { display: block; }
+
+/* Language toggle */
+.taal {
+  position: absolute;
+  top: 8px;
+  right: 24px;
+  font-size: 0.8em;
+  color: #888;
+}
+.taal a { color: #888; }
+.taal a:hover { color: #2b8f99; }
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.hoofdmenu {
+  display: flex;
+  align-items: center;
+}
+
+#hamburger {
+  display: none;
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 0.8em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #2b8f99;
+  border: 1px solid #2b8f99;
+  padding: 6px 14px;
+  cursor: pointer;
+  text-decoration: none;
+}
+#hamburger:hover { background: #2b8f99; color: #fff; text-decoration: none; }
+
+.menu.nav ul#navigatie {
+  list-style: none;
+  display: flex;
+  gap: 0;
+}
+
+.menu.nav ul#navigatie li.mainmenu > a.mainmenu {
+  display: block;
+  padding: 10px 16px;
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 0.85em;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #444;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  text-decoration: none;
+}
+
+.menu.nav ul#navigatie li.mainmenu > a.mainmenu:hover,
+.menu.nav ul#navigatie li.menuselected > a.mainmenu {
+  color: #2b8f99;
+  border-bottom-color: #2b8f99;
+}
+
+/* ============================================================
+   STICKY HEADER
+   ============================================================ */
+.stickyheadermain {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  z-index: 999;
+  display: none;
+}
+
+.stickyheadermain.visible { display: block; }
+
+.stickyheadermain .main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.stickyheader { flex-shrink: 0; }
+
+/* ============================================================
+   MAIN CONTENT
+   ============================================================ */
+.maincontent {
+  padding: 48px 0 56px;
+  min-height: 380px;
+}
+
+/* Subtitle below h1 on wie-page */
+p.subtitle {
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 1.1em;
+  color: #2b8f99;
+  margin: -0.3em 0 1.2em;
+}
+
+/* Mission statement block */
+p.missie {
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 1.05em;
+  font-style: italic;
+  color: #2b8f99;
+  border-left: 5px solid #2b8f99;
+  padding: 0.6em 0 0.6em 1em;
+  margin: 1.5em 0;
+  background: #f0fafb;
+}
+
+/* ============================================================
+   CIRKEL BUTTONS
+   ============================================================ */
+a.cirkel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  border: 2px solid #2b8f99;
+  color: #2b8f99;
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 0.82em;
+  line-height: 1.3;
+  margin: 8px 6px;
+  padding: 10px;
+  transition: background 0.2s ease, color 0.2s ease;
+  text-decoration: none;
+  vertical-align: middle;
+}
+a.cirkel:hover {
+  background: #2b8f99;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ============================================================
+   COLLAPSIBLE SHOW/HIDE (showhide / hide)
+   ============================================================ */
+.showhide {
+  cursor: pointer;
+  user-select: none;
+}
+
+.showhide h2.petrol {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.showhide h2.petrol img {
+  width: 18px;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.showhide.open h2.petrol img {
+  transform: rotate(90deg);
+}
+
+.hide {
+  display: none;
+  padding: 1em 0 1em 1.5em;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* ============================================================
+   FAQ SECTION
+   ============================================================ */
+.faq { margin-top: 2.5em; }
+
+.faq-item h3 {
+  font-family: 'Didact Gothic', sans-serif;
+  color: #2b8f99;
+  font-size: 1.02em;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footermainfirst {
+  background: #f4f4f4;
+  border-top: 5px solid #2b8f99;
+  padding: 32px 0;
+  text-align: center;
+}
+
+.footermainfirst p {
+  margin-bottom: 0.6em;
+}
+
+/* Social icon links */
+.footermainfirst > .main > p:first-child a {
+  display: inline-block;
+  font-size: 1.6em;
+  color: #2b8f99;
+  margin: 0 6px;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+.footermainfirst > .main > p:first-child a:hover { color: #1d6e77; }
+
+/* Privacy link */
+.footermainfirst > .main > p + p a {
+  font-size: 0.85em;
+  color: #666;
+}
+.footermainfirst > .main > p + p a:hover { color: #2b8f99; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .hero { height: 160px; }
+
+  .headermain .main { gap: 6px; }
+
+  #hamburger { display: block; }
+
+  .menu.nav {
+    display: none;
+    width: 100%;
+    order: 3;
+    border-top: 1px solid #e8e8e8;
+    padding-top: 4px;
+  }
+  .menu.nav.open { display: block; }
+
+  .menu.nav ul#navigatie {
+    flex-direction: column;
+  }
+
+  .menu.nav ul#navigatie li.mainmenu > a.mainmenu {
+    padding: 12px 4px;
+    border-bottom: 1px solid #eee;
+    border-left: none;
+  }
+
+  .maincontent { padding: 28px 0 36px; }
+
+  h1 { font-size: 1.4em; }
+
+  a.cirkel {
+    width: 92px;
+    height: 92px;
+    font-size: 0.75em;
+  }
+
+  .taal { top: 6px; right: 14px; }
+}
+
+@media (max-width: 480px) {
+  .main { padding: 0 14px; }
+  .hero { height: 120px; }
+  h1 { font-size: 1.25em; }
+}
