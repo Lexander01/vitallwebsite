@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /include/
+Disallow: /img/
+
+Sitemap: https://www.vitall.nu/sitemap.xml
